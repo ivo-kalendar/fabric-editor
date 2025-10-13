@@ -45,3 +45,31 @@ body {
         display: none;
     }
 }
+
+.Settings {
+    position: fixed;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: #354575;
+    padding: 24px 8px;
+    border-radius: 4px;
+    text-align: left;
+    &:empty {
+        padding: 0;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin: 8px;
+
+        label {
+            color: #fff;
+        }
+    }
+}
