@@ -1,6 +1,6 @@
-import { Canvas, Circle, Rect } from "fabric";
+import { Canvas, Circle, Rect, Triangle } from "fabric";
 import { useEffect, useRef, useState } from "react";
-import { LuCircle, LuRectangleHorizontal } from "react-icons/lu";
+import { LuCircle, LuRectangleHorizontal, LuTriangle } from "react-icons/lu";
 import Settings from "./Settings.jsx";
 
 export default function App() {
@@ -54,6 +54,20 @@ export default function App() {
         canvas.renderAll();
     }
 
+    const addTriangle = () => {
+        if (!canvas) return
+        const triangle = new Triangle({
+            width: 100,
+            height: 60,
+            left: 50,
+            top: 100,
+            fill: "#225df2",
+            // stroke: "black",
+        });
+        canvas.add(triangle);
+        canvas.renderAll();
+    }
+
     return (
         <div className="App">
             <div className="Toolbar">
@@ -63,6 +77,10 @@ export default function App() {
 
                 <button onClick={addCircle} >
                     <LuCircle />
+                </button>
+
+                <button onClick={addTriangle} >
+                    <LuTriangle />
                 </button>
             </div>
             <canvas id="canvas" ref={canvasRef} />

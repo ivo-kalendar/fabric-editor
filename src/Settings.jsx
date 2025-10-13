@@ -56,6 +56,8 @@ export default function Settings({ canvas }) {
     const handleObjectSelection = (object) => {
         if (!object) return;
         setSelectedObject(object);
+        canvas.bringObjectForward(object);
+        canvas.bringObjectToFront(object);
 
         if (object.type === "rect") {
             setWidth(Math.round(object.width * object.scaleX));
