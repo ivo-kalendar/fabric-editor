@@ -17,7 +17,6 @@ import { useEffect, useState } from "react";
  */
 
 /**
- * Submit Button
  * @param {Type_JSXProps & Type_HTMLDivProps & SettingsType} props
  * @returns {import("react").JSX.Element}
  */
@@ -161,6 +160,30 @@ export default function Settings({ canvas }) {
         }
     };
 
+    const ShapeComponent = () => (
+        <>
+            <div>
+                <label>Color</label>
+                <input type="color" value={color || ""} onChange={handleColorChange} />
+            </div>
+
+            <div>
+                <label>Stroke Width</label>
+                <input
+                    type="number"
+                    value={strokeWidth || ""}
+                    min={0}
+                    onChange={handleStrokeWidthChange}
+                />
+            </div>
+
+            <div>
+                <label>Stroke</label>
+                <input type="color" value={stroke || ""} onChange={handleStrokeChange} />
+            </div>
+        </>
+    );
+
     return (
         <div className="Settings">
             {selectedObject && (
@@ -186,6 +209,8 @@ export default function Settings({ canvas }) {
                                     onChange={handleHeightChange}
                                 />
                             </div>
+
+                            <ShapeComponent />
                         </>
                     )}
 
@@ -200,28 +225,10 @@ export default function Settings({ canvas }) {
                                     onChange={handleDiameterChange}
                                 />
                             </div>
+
+                            <ShapeComponent />
                         </>
                     )}
-
-                    <div>
-                        <label>Color</label>
-                        <input type="color" value={color || ""} onChange={handleColorChange} />
-                    </div>
-
-                    <div>
-                        <label>Stroke Width</label>
-                        <input
-                            type="number"
-                            value={strokeWidth || ""}
-                            min={0}
-                            onChange={handleStrokeWidthChange}
-                        />
-                    </div>
-
-                    <div>
-                        <label>Stroke</label>
-                        <input type="color" value={stroke || ""} onChange={handleStrokeChange} />
-                    </div>
                 </>
             )}
         </div>

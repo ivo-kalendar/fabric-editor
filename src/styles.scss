@@ -46,6 +46,22 @@ body {
     }
 }
 
+.ToolbarBottom {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    background-color: #354575;
+    padding: 8px 8px;
+    border-radius: 4px;
+    position: fixed;
+    top: 50vh;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50vw;
+    &:empty {
+        display: none;
+    }
+}
+
 .Settings {
     position: fixed;
     top: 50%;

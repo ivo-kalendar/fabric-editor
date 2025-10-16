@@ -2,6 +2,8 @@ import { Canvas, Circle, Rect, Triangle } from "fabric";
 import { useEffect, useRef, useState } from "react";
 import { LuCircle, LuRectangleHorizontal, LuTriangle } from "react-icons/lu";
 import Settings from "./Settings.jsx";
+import Video from "./Video.jsx";
+import CanvasSettings from "./CanvasSettings.jsx";
 
 export default function App() {
     /** @type {React.RefObject<Canvas | null>} */
@@ -28,7 +30,7 @@ export default function App() {
     }, []);
 
     const addRectangle = () => {
-        if (!canvas) return
+        if (!canvas) return;
         const rect = new Rect({
             width: 100,
             height: 60,
@@ -39,10 +41,10 @@ export default function App() {
         });
         canvas.add(rect);
         canvas.renderAll();
-    }
+    };
 
     const addCircle = () => {
-        if (!canvas) return
+        if (!canvas) return;
         const circle = new Circle({
             radius: 50,
             left: 50,
@@ -52,10 +54,10 @@ export default function App() {
         });
         canvas.add(circle);
         canvas.renderAll();
-    }
+    };
 
     const addTriangle = () => {
-        if (!canvas) return
+        if (!canvas) return;
         const triangle = new Triangle({
             width: 100,
             height: 60,
@@ -66,26 +68,29 @@ export default function App() {
         });
         canvas.add(triangle);
         canvas.renderAll();
-    }
+    };
 
     return (
         <div className="App">
             <div className="Toolbar">
-                <button onClick={addRectangle} >
+                <button onClick={addRectangle}>
                     <LuRectangleHorizontal />
                 </button>
 
-                <button onClick={addCircle} >
+                <button onClick={addCircle}>
                     <LuCircle />
                 </button>
 
-                <button onClick={addTriangle} >
+                <button onClick={addTriangle}>
                     <LuTriangle />
                 </button>
+
+                <Video canvas={canvas} canvasRef={canvasRef} />
             </div>
             <canvas id="canvas" ref={canvasRef} />
 
             <Settings canvas={canvas} />
+            {/* <CanvasSettings canvas={canvas} /> */}
         </div>
     );
 }
