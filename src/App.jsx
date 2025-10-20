@@ -1,4 +1,4 @@
-import { Canvas, Circle, Rect, Triangle, FabricImage } from "fabric";
+import { Canvas, Circle, Rect, Triangle, FabricImage, StaticCanvas } from "fabric";
 import { useEffect, useRef, useState } from "react";
 import { LuCircle, LuRectangleHorizontal, LuTriangle } from "react-icons/lu";
 import Settings from "./Settings.jsx";
@@ -7,6 +7,7 @@ import CanvasSettings from "./CanvasSettings.jsx";
 import { clearGuidelines, handleObjectMoving } from "./snappingHelper.js";
 import LayersList from "./LayersList.jsx";
 import { HiPhoto } from "react-icons/hi2";
+import FileExport from "./FileExport.jsx";
 
 export default function App() {
     /** @type {React.RefObject<Canvas | null>} */
@@ -16,8 +17,25 @@ export default function App() {
 
     const [guidelines, setGuidelines] = useState([]);
 
+    const extendObjectWithCustomProps = (obj) => {
+        obj.styleID = obj.styleID || null;
+        obj.zIndex = obj.zIndex || 0;
+        obj.id = obj.id || `obj-${Date.now()}`;
+
+        const originalToObject = obj.toObject;
+        obj.toObject = function (propsToInclude = []) {
+            return originalToObject.call(this, [...propsToInclude, "styleID", "zIndex", "id"]);
+        };
+    };
+
     useEffect(() => {
         if (canvasRef.current) {
+            // const initCanvas = new StaticCanvas(canvasRef.current, {
+            //     width: 500,
+            //     height: 400,
+            //     backgroundColor: "#808080",
+            // });
+
             const initCanvas = new Canvas(canvasRef.current, {
                 width: 500,
                 height: 400,
@@ -28,6 +46,10 @@ export default function App() {
 
             setCanvas(initCanvas);
 
+            initCanvas.on("object:added", (e) => {
+                extendObjectWithCustomProps(e.target);
+            });
+
             initCanvas.on("object:moving", (e) => {
                 handleObjectMoving(initCanvas, e.target, guidelines, setGuidelines);
             });
@@ -35,6 +57,10 @@ export default function App() {
             initCanvas.on("object:modified", () => {
                 clearGuidelines(initCanvas, guidelines, setGuidelines);
             });
+
+            // initCanvas.on("mouse:over", (e) => {
+            //     console.log("mouse over: ", e.target);
+            // });
 
             return () => {
                 initCanvas.dispose();
@@ -112,6 +138,7 @@ export default function App() {
 
     return (
         <div className="App">
+            <FileExport canvas={canvas} />
             <div className="Toolbar">
                 <button onClick={addRectangle}>
                     <LuRectangleHorizontal />
