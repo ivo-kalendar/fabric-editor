@@ -2,7 +2,7 @@ import { Line } from "fabric";
 
 const snapingDistance = 10
 
-export const handleObjectMoving = (canvas, obj, guidelines, setGuidelines) => {
+export const handleObjectMoving = (canvas, obj, setGuidelines) => {
 
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;

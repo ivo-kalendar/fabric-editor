@@ -42,6 +42,8 @@ export default function App() {
                 backgroundColor: "#808080",
             });
 
+            // initCanvas.setZoom(1);
+
             initCanvas.renderAll();
 
             setCanvas(initCanvas);
@@ -51,11 +53,11 @@ export default function App() {
             });
 
             initCanvas.on("object:moving", (e) => {
-                handleObjectMoving(initCanvas, e.target, guidelines, setGuidelines);
+                handleObjectMoving(initCanvas, e.target, setGuidelines);
             });
 
             initCanvas.on("object:modified", () => {
-                clearGuidelines(initCanvas, guidelines, setGuidelines);
+                clearGuidelines(initCanvas);
             });
 
             // initCanvas.on("mouse:over", (e) => {

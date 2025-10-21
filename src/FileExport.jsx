@@ -34,7 +34,14 @@ export default function FileExport({ canvas }) {
 
     const exportCanvasJSON = () => {
         if (!canvas) return;
-        const jsonData = canvas.toJSON(["id", "version", "objects", "styleID", "zIndex"]);
+        const jsonData = canvas.toJSON();
+
+        if (!jsonData.canvasID) {
+            jsonData.canvasID = Date.now();
+        }
+        
+        jsonData.name = "";
+
         const jsonString = JSON.stringify(jsonData, null, 2);
         const blob = new Blob([jsonString], { type: "application/json" });
         const url = URL.createObjectURL(blob);
