@@ -17,9 +17,9 @@ Developed as a technical showcase for scalable React applications with complex s
 
 | Different Interactive Elements | Main UI With Rects |
 |:---:|:---:|
-| ![Different Interactive Elements](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_1.png) | ![Main UI With Rects](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_2.png) |
+| ![Different Interactive Elements](https://github.com/ivo-kalendar/fabric-editor/blob/master/public/scr_1.png) | ![Main UI With Rects](https://github.com/ivo-kalendar/fabric-editor/blob/master/public/scr_2.png) |
 | **Empty Canvas** | **Pie Chart** |
-| ![Empty Canvas](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_3.png) | ![Pie Chart](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_4.png) |
+| ![Empty Canvas](https://github.com/ivo-kalendar/fabric-editor/blob/master/public/scr_3.png) | ![Pie Chart](https://github.com/ivo-kalendar/fabric-editor/blob/master/public/scr_4.png) |
 
 ---
 
@@ -54,8 +54,8 @@ Ensure you have Node.js (version >= 20.19.0) installed.
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/ivo-kalendar/fabricjs-editor-test.git](https://github.com/ivo-kalendar/fabricjs-editor-test.git)
-    cd fabricjs-editor-test
+    git clone [https://github.com/ivo-kalendar/fabric-editor.git](https://github.com/ivo-kalendar/fabric-editor.git)
+    cd fabric-editor
     ```
 
 2.  **Install dependencies**
@@ -81,7 +81,7 @@ Ensure you have Node.js (version >= 20.19.0) installed.
 The project follows a modular React architecture:
 
 ```text
-FABRICJS-EDITOR/
+fabric-editor/
 ├── 📁 public/                      # Static assets and screenshots
 ├── 📁 src/
 │   ├── 📁 components/              # UI Components
