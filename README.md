@@ -17,9 +17,9 @@ Developed as a technical showcase for scalable React applications with complex s
 
 | Different Interactive Elements | Main UI With Rects |
 |:---:|:---:|
-| ![Different Interactive Elements](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scrs/scr_1.png) | ![Main UI With Rects](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scrs/scr_2.png) |
+| ![Different Interactive Elements](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_1.png) | ![Main UI With Rects](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_2.png) |
 | **Empty Canvas** | **Pie Chart** |
-| ![Empty Canvas](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scrs/scr_3.png) | ![Pie Chart](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scrs/scr_4.png) |
+| ![Empty Canvas](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_3.png) | ![Pie Chart](https://github.com/ivo-kalendar/fabricjs-editor/blob/master/public/scr_4.png) |
 
 ---
 
