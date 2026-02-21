@@ -113,4 +113,4 @@ Since this is a functional prototype, the following enhancements are planned:
 
 ## 📄 License
 
-This project is licensed under the **ISC License**.
+MIT © 2024 **Ivo Kalendarov**
